@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     important: DataTypes.BOOLEAN
   }, {});
   todoitem.associate = function(models) {
-    // associations can be defined here
+    todoitem.belongsTo(models.todolist);
   };
   return todoitem;
 };

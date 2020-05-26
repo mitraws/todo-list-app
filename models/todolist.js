@@ -4,7 +4,9 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING
   }, {});
   todolist.associate = function(models) {
-    // associations can be defined here
+    todolist.belongsTo(models.user);
+    todolist.hasMany(models.todoitem);
+
   };
   return todolist;
 };

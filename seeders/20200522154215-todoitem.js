@@ -3,17 +3,21 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert(
-      "todolists",
+      "todoitems",
       [
         {
-          name: "food",
+          task: "Have some dessert",
+          deadline: "tomorrow",
           createdAt: new Date(),
           updatedAt: new Date(),
+          todolistId: 1
         },
         {
-          name: "exercises",
+          task: "Eat more veggies",
+          deadline: "next week",
           createdAt: new Date(),
           updatedAt: new Date(),
+          todolistId: 2
         },
       ],
       {}
@@ -21,6 +25,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete("users", null, {});
+    return queryInterface.bulkDelete("todoitems", null, {});
   },
 };
