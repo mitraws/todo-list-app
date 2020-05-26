@@ -1,4 +1,4 @@
-const { user, todoitem, todolist } = require("./models");
+const { user, todoitem, todolist, tag } = require("./models");
 
 async function listsWithUsers() {
   const lists = await todolist.findAll({
@@ -64,8 +64,8 @@ async function getUserWithList(id) {
   // Many to many query
   
   async function itemsWithTags() {
-    const items = await todoItem.findAll({ include: [tag] });
+    const items = await todoitem.findAll({ include: [tag] });
     return items.map(item => item.get({ plain: true }));
   }
   
-  // itemsWithTags().then(items => console.log("items with tags", items));
+//   itemsWithTags().then(items => console.log("items with tags", items));
