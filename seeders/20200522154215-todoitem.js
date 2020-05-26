@@ -21,6 +21,14 @@ module.exports = {
           updatedAt: new Date(),
           todolistId: 2
         },
+        {
+          task: "todoitem3",
+          important: true,
+          deadline: "next week",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+          todolistId: 2
+        },
       ],
       {}
     );
