@@ -1,10 +1,12 @@
 const express = require("express");
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
 
 const TodoList = require("./models").todolist;
 const User = require("./models").user;
+const cors = require("cors");
 
+app.use(cors());
 app.use(express.json());
 
 app.listen(port, () => console.log(`Listening on :${port}`));
@@ -14,7 +16,7 @@ app.use((req, res, next) => {
  next() 
 });
 
-//firt exercise:
+//first exercise:
 // app.post("/echo", (req, res) => {
 //     res.json(req.body);
 //   });
